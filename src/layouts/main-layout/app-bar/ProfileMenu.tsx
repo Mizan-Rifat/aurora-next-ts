@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Box,
   Button,
@@ -54,7 +52,7 @@ const ProfileMenu = () => {
         <StatusAvatar
           alt="Captain Haddock"
           status="online"
-          src={avatar14}
+          src={avatar14.src}
           sx={{ width: 36, height: 36 }}
         />
       </Button>
@@ -74,7 +72,7 @@ const ProfileMenu = () => {
           <StatusAvatar
             status="online"
             alt="Captain Haddock"
-            src={avatar14}
+            src={avatar14.src}
             sx={{ width: 48, height: 48 }}
           />
           <Box>

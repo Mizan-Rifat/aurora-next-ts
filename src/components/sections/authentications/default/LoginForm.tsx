@@ -8,7 +8,7 @@ import {
   Button,
   FormControlLabel,
   Checkbox,
-  Link,
+  Link
 } from '@mui/material';
 import google_logo from 'assets/icons/google_logo.webp';
 import apple_logo from 'assets/icons/apple_logo.webp';
@@ -18,6 +18,7 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { LoadingButton } from '@mui/lab';
 import PasswordTextField from 'components/common/PasswordTextField';
+import Image from 'components/base/Image';
 
 interface LoginFormValues {
   email: string;
@@ -30,7 +31,7 @@ const schema = yup
       .string()
       .email('Please provide a valid email address.')
       .required('This field is required'),
-    password: yup.string().required('This field is required'),
+    password: yup.string().required('This field is required')
   })
   .required();
 
@@ -38,15 +39,15 @@ const LoginForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<LoginFormValues>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
       // TODO: Replace this promise with functional login action
-      await new Promise((resolve) => {
+      await new Promise(resolve => {
         setTimeout(() => {
           console.log({ data });
           resolve(data);
@@ -98,7 +99,7 @@ const LoginForm = () => {
               color="primary"
               size="large"
               sx={{ flex: 1, whiteSpace: 'nowrap' }}
-              startIcon={<img src={google_logo} alt="icon" />}
+              startIcon={<Image src={google_logo} height={21} width={21} alt="icon" />}
             >
               Sign in with google
             </Button>
@@ -108,7 +109,7 @@ const LoginForm = () => {
               color="primary"
               size="large"
               sx={{ flex: 1, whiteSpace: 'nowrap' }}
-              startIcon={<img src={apple_logo} alt="icon" />}
+              startIcon={<Image src={apple_logo} height={21} width={21} alt="icon" />}
             >
               Sign in with apple
             </Button>

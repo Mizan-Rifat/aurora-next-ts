@@ -1,5 +1,3 @@
-'use client';
-
 import { Button, ListItemIcon, MenuItem, Typography } from '@mui/material';
 import { useState } from 'react';
 import Menu from '@mui/material/Menu';

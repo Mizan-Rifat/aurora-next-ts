@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 import { grey } from 'theme/colors';
-// import { LinkBehavior } from './Link';
+import { LinkBehavior } from './Link';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
@@ -152,7 +152,7 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
 
 export const ButtonBase: Components<Omit<Theme, 'components'>>['MuiButtonBase'] = {
   defaultProps: {
-    // LinkComponent: LinkBehavior,
+    LinkComponent: LinkBehavior
   }
 };
 export default Button;

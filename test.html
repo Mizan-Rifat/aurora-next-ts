@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="__className_d7c01c">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="preload" href="/_next/static/media/0e7784537271ba44-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/42ca9a2dc174b9b9-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/6a44acd4f1e705fc-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebd901f2f4a0b98-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/83c76cede88902c5-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/95a978e26cc29d74-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/f5e5067cd50e2c82-s.p.woff2" as="font" crossorigin=""
+    type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1710320927782"
+    data-precedence="next_static/css/app/layout.css" />
+  <link rel="preload" href="/_next/static/chunks/webpack.js?v=1710320927782" as="script" fetchPriority="low" />
+  <script src="/_next/static/chunks/main-app.js?v=1710320927782" async=""></script>
+  <title>Dashboard: Analytics</title>
+  <meta name="description"
+    content="The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="/favicon/favicon.ico" />
+  <link rel="icon" href="/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
+  <link rel="icon" href="/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180" />
+  <meta name="next-size-adjust" />
+  <script src="/_next/static/chunks/polyfills.js" noModule=""></script>
+  <style data-emotion="css-global 456cxp">
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    strong,
+    b {
+      font-weight: 700;
+    }
+
+    body {
+      margin: 0;
+      color: #212B36;
+      line-height: 1.5;
+      font-size: 1rem;
+      font-family: '__Public_Sans_d7c01c', '__Public_Sans_Fallback_d7c01c', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      background-color: #FFFFFF;
+    }
+
+    @media print {
+      body {
+        background-color: #FFFFFF;
+      }
+    }
+
+    body::backdrop {
+      background-color: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #root,
+    #__next {
+      width: 100%;
+      height: 100%;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    input[type=number]::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  </style>
+  <style data-emotion="css-global lo3ndg">
+    #nprogress {
+      pointer-events: none;
+    }
+
+    #nprogress .bar {
+      top: 0;
+      left: 0;
+      height: 2.5px;
+      z-index: 9999;
+      width: 100%;
+      position: fixed;
+      background-color: #00A76F;
+      box-shadow: 0 0 2px #00A76F;
+    }
+
+    #nprogress .peg {
+      right: 0;
+      opacity: 1;
+      width: 100px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -moz-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+      transform: rotate(3deg) translate(0px, -4px);
+      box-shadow: 0 0 10px #00A76F, 0 0 5px #00A76F;
+    }
+  </style>
+  <style data-emotion="css 1nw5j4j-MuiDrawer-root">
+    .css-1nw5j4j-MuiDrawer-root {
+      z-index: 1200;
+    }
+
+    .css-1nw5j4j-MuiDrawer-root .MuiDrawer-paper {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.9);
+      background-image: url(/assets/cyan-blur.png), url(/assets/red-blur.png);
+      background-repeat: no-repeat, no-repeat;
+      -webkit-background-position: top right, left bottom;
+      background-position: top right, left bottom;
+      -webkit-background-size: 50%, 50%;
+      background-size: 50%, 50%;
+      box-shadow: -40px 40px 80px -8px rgba(145, 158, 171, 0.24);
+    }
+
+    .css-1nw5j4j-MuiDrawer-root .MuiDrawer-paper {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.9);
+      background-image: url(/assets/cyan-blur.png), url(/assets/red-blur.png);
+      background-repeat: no-repeat, no-repeat;
+      -webkit-background-position: top right, left bottom;
+      background-position: top right, left bottom;
+      -webkit-background-size: 50%, 50%;
+      background-size: 50%, 50%;
+      width: 280px;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height:100%"> <!--$--><!--/$--> </div>
+  <script src="/_next/static/chunks/webpack.js?v=1710320927782" async=""></script>
+  <script>(self.__next_f = self.__next_f || []).push([0]); self.__next_f.push([2, null])</script>
+  <script>self.__next_f.push([1, "1:HL[\"/_next/static/media/0e7784537271ba44-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"/_next/static/media/42ca9a2dc174b9b9-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/_next/static/media/6a44acd4f1e705fc-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n4:HL[\"/_next/static/media/7ebd901f2f4a0b98-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n5:HL[\"/_next/static/media/83c76cede88902c5-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n6:HL[\"/"])</script>
+  <script>self.__next_f.push([1, "_next/static/media/95a978e26cc29d74-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n7:HL[\"/_next/static/media/f5e5067cd50e2c82-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n8:HL[\"/_next/static/css/app/layout.css?v=1710320927782\",\"style\"]\n0:\"$L9\"\n"])</script>
+  <script>self.__next_f.push([1, "a:I{\"id\":\"(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js\",\"chunks\":[\"app-pages-internals:static/chunks/app-pages-internals.js\"],\"name\":\"\",\"async\":false}\nc:I{\"id\":\"(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js\",\"chunks\":[\"app-pages-internals:static/chunks/app-pages-internals.js\"],\"name\":\"\",\"async\":false}\nd:I{\"id\":\"(app-pages-browser)/./src/auth/context/jwt/auth-provider.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"AuthProvid"])</script>
+  <script>self.__next_f.push([1, "er\",\"async\":false}\ne:I{\"id\":\"(app-pages-browser)/./src/locales/localization-provider.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"\",\"async\":false}\nf:I{\"id\":\"(app-pages-browser)/./src/components/settings/context/settings-provider.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"SettingsProvider\",\"async\":false}\n10:I{\"id\":\"(app-pages-browser)/./src/theme/index.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"\",\"async\":false}\n11:I{\"id\":\"(app-pages-browser)/./s"])</script>
+  <script>self.__next_f.push([1, "rc/components/animate/motion-lazy.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"MotionLazy\",\"async\":false}\n12:I{\"id\":\"(app-pages-browser)/./src/components/snackbar/snackbar-provider.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"\",\"async\":false}\n13:I{\"id\":\"(app-pages-browser)/./src/sections/checkout/context/checkout-provider.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"CheckoutProvider\",\"async\":false}\n14:I{\"id\":\"(app-pages-browser)/./src/components/se"])</script>
+  <script>self.__next_f.push([1, "ttings/drawer/settings-drawer.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"\",\"async\":false}\n15:I{\"id\":\"(app-pages-browser)/./src/components/progress-bar/progress-bar.tsx\",\"chunks\":[\"app/layout:static/chunks/app/layout.js\"],\"name\":\"\",\"async\":false}\n16:I{\"id\":\"(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js\",\"chunks\":[\"app-pages-internals:static/chunks/app-pages-internals.js\"],\"name\":\"\",\"async\":false}\n17:I{\"id\":\"(app-pages-browser)/./src/app/loading.tsx\",\"ch"])</script>
+  <script>self.__next_f.push([1, "unks\":[\"app/loading:static/chunks/app/loading.js\"],\"name\":\"\",\"async\":false}\n18:I{\"id\":\"(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js\",\"chunks\":[\"app-pages-internals:static/chunks/app-pages-internals.js\"],\"name\":\"\",\"async\":false}\n19:I{\"id\":\"(app-pages-browser)/./src/sections/error/not-found-view.tsx\",\"chunks\":[\"app/not-found:static/chunks/app/not-found.js\"],\"name\":\"\",\"async\":false}\n1a:I{\"id\":\"(app-pages-browser)/./src/app/dashboard/layout.tsx\",\"chunks\":[\"app/d"])</script>
+  <script>self.__next_f.push([1, "ashboard/layout:static/chunks/app/dashboard/layout.js\"],\"name\":\"\",\"async\":false}\n1b:I{\"id\":\"(app-pages-browser)/./src/app/dashboard/loading.tsx\",\"chunks\":[\"app/dashboard/loading:static/chunks/app/dashboard/loading.js\"],\"name\":\"\",\"async\":false}\n1d:I{\"id\":\"(app-pages-browser)/./src/sections/overview/analytics/view/overview-analytics-view.tsx\",\"chunks\":[\"app/dashboard/analytics/page:static/chunks/app/dashboard/analytics/page.js\"],\"name\":\"\",\"async\":false}\n"])</script>
+  <script>self.__next_f.push([1, "9:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/app/layout.css?v=1710320927782\",\"precedence\":\"next_static/css/app/layout.css\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"$La\",null,{\"buildId\":\"development\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/dashboard/analytics/\",\"initialTree\":[\"\",{\"children\":[\"dashboard\",{\"children\":[\"analytics\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialHead\":[false,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"children\":[null,[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__className_d7c01c\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$Le\",null,{\"children\":[\"$\",\"$Lf\",null,{\"defaultSettings\":{\"themeMode\":\"light\",\"themeDirection\":\"ltr\",\"themeContrast\":\"default\",\"themeLayout\":\"vertical\",\"themeColorPresets\":\"default\",\"themeStretch\":false},\"children\":[\"$\",\"$L10\",null,{\"children\":[\"$\",\"$L11\",null,{\"children\":[\"$\",\"$L12\",null,{\"children\":[\"$\",\"$L13\",null,{\"children\":[[\"$\",\"$L14\",null,{}],[\"$\",\"$L15\",null,{}],[\"$\",\"$L16\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"loading\":[\"$\",\"$L17\",null,{}],\"loadingStyles\":[],\"hasLoading\":true,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"template\":[\"$\",\"$L18\",null,{}],\"templateStyles\":\"$undefined\",\"notFound\":[\"$\",\"$L19\",null,{}],\"notFoundStyles\":[],\"childProp\":{\"current\":[null,[\"$\",\"$L1a\",null,{\"children\":[\"$\",\"$L16\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"dashboard\",\"children\"],\"loading\":[\"$\",\"$L1b\",null,{}],\"loadingStyles\":[],\"hasLoading\":true,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"template\":[\"$\",\"$L18\",null,{}],\"templateStyles\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"childProp\":{\"current\":[\"$\",\"$L16\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"dashboard\",\"children\",\"analytics\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"template\":[\"$\",\"$L18\",null,{}],\"templateStyles\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"childProp\":{\"current\":[\"$L1c\",[\"$\",\"$L1d\",null,{}],null],\"segment\":\"__PAGE__\"},\"styles\":[]}],\"segment\":\"analytics\"},\"styles\":[]}],\"params\":{}}],null],\"segment\":\"dashboard\"},\"styles\":[]}]]}]}]}]}]}]}]}]}]}],null]}]]\n"])</script>
+  <script>self.__next_f.push([1, "b:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"1\",{\"children\":\"Dashboard: Analytics\"}],[\"$\",\"meta\",\"2\",{\"name\":\"description\",\"content\":\"The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style\"}],[\"$\",\"link\",\"3\",{\"rel\":\"manifest\",\"href\":\"/manifest.json\"}],[\"$\",\"meta\",\"4\",{\"name\":\"keywords\",\"content\":\"react,material,kit,application,dashboard,admin,template\"}],[\"$\",\"meta\",\"5\",{\"name\":\"theme-color\",\"content\":\"#000000\"}],[\"$\",\"meta\",\"6\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1, maximum-scale=1\"}],[\"$\",\"link\",\"7\",{\"rel\":\"icon\",\"href\":\"/favicon/favicon.ico\"}],[\"$\",\"link\",\"8\",{\"rel\":\"icon\",\"href\":\"/favicon/favicon-16x16.png\",\"type\":\"image/png\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"9\",{\"rel\":\"icon\",\"href\":\"/favicon/favicon-32x32.png\",\"type\":\"image/png\",\"sizes\":\"32x32\"}],[\"$\",\"link\",\"10\",{\"rel\":\"apple-touch-icon\",\"href\":\"/favicon/apple-touch-icon.png\",\"sizes\":\"180x180\"}],[\"$\",\"meta\",\"11\",{\"name\":\"next-size-adjust\"}]]\n"])</script>
+  <script>self.__next_f.push([1, "1c:null\n"])</script>
+</body>
+
+</html>

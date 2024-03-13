@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren } from 'react';
 import { Box, Grid } from '@mui/material';
 import log from 'assets/illustrations/log.webp';
@@ -12,17 +14,17 @@ const DefaultAuthLayout = ({ children }: PropsWithChildren) => {
         md={6}
         sx={{
           borderRight: { md: 1 },
-          borderColor: { md: 'grey.300' },
+          borderColor: { md: 'grey.300' }
         }}
       >
         <Box
           sx={{
             height: 1,
-            backgroundImage: { md: `url(${log})` },
+            backgroundImage: { md: `url(${log.src})` },
             backgroundSize: '80%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            p: { xs: 3, sm: 5 },
+            p: { xs: 3, sm: 5 }
           }}
         >
           <Logo />

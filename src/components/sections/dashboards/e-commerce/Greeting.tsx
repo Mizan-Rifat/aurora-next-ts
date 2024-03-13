@@ -8,7 +8,7 @@ import {
   ListItemButton,
   Paper,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { MeetingSchedule, Stat } from 'data/e-commerce/greetings';
@@ -55,7 +55,7 @@ const Greeting = ({ stats, meetingSchedules }: GreetingProps) => {
                   flex: 1,
                   px: { sm: 3, md: 0 },
                   borderLeft: { sm: 1, md: 'none' },
-                  borderColor: { sm: 'grey.300' },
+                  borderColor: { sm: 'grey.300' }
                 }}
               >
                 <Avatar sx={{ color: 'primary.main', bgcolor: 'primary.lighter' }}>
@@ -93,8 +93,8 @@ const Greeting = ({ stats, meetingSchedules }: GreetingProps) => {
                   gap: 1,
                   flex: 1,
                   '&:hover': {
-                    backgroundColor: 'grey.200',
-                  },
+                    backgroundColor: 'grey.200'
+                  }
                 }}
               >
                 <Typography
@@ -102,7 +102,7 @@ const Greeting = ({ stats, meetingSchedules }: GreetingProps) => {
                   fontSize={16}
                   color="text.primary"
                   sx={{
-                    lineClamp: 1,
+                    lineClamp: 1
                   }}
                 >
                   {title}
@@ -127,13 +127,17 @@ const Greeting = ({ stats, meetingSchedules }: GreetingProps) => {
                         height: 24,
                         fontSize: '0.6rem',
                         '&:first-of-type': {
-                          backgroundColor: 'primary.main',
-                        },
-                      },
+                          backgroundColor: 'primary.main'
+                        }
+                      }
                     }}
                   >
-                    {attendants.map((attendant) => (
-                      <Avatar alt={attendant.name} key={attendant.name} src={attendant.avatar} />
+                    {attendants.map(attendant => (
+                      <Avatar
+                        alt={attendant.name}
+                        key={attendant.name}
+                        src={attendant.avatar.src}
+                      />
                     ))}
                   </AvatarGroup>
                 </Stack>

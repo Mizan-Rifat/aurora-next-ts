@@ -8,6 +8,7 @@ import avatar_9 from 'assets/avatar/avatar_9.webp';
 import avatar_10 from 'assets/avatar/avatar_10.webp';
 import avatar_12 from 'assets/avatar/avatar_12.webp';
 import avatar_14 from 'assets/avatar/avatar_14.webp';
+import { StaticImageData } from 'next/image';
 
 export interface Stat {
   icon: string;
@@ -20,7 +21,7 @@ export interface MeetingSchedule {
   time: string;
   attendants: {
     name: string;
-    avatar: string;
+    avatar: StaticImageData;
   }[];
 }
 
@@ -28,18 +29,18 @@ export const stats: Stat[] = [
   {
     icon: 'material-symbols-light:ads-click-rounded',
     value: '2,110',
-    subtitle: 'Visitors',
+    subtitle: 'Visitors'
   },
   {
     icon: 'material-symbols-light:request-quote-outline-rounded',
     value: '$8.2M',
-    subtitle: 'Earnings',
+    subtitle: 'Earnings'
   },
   {
     icon: 'material-symbols-light:shopping-cart-checkout-rounded',
     value: '1,124',
-    subtitle: 'Orders',
-  },
+    subtitle: 'Orders'
+  }
 ];
 
 export const meetingSchedules: MeetingSchedule[] = [
@@ -49,8 +50,8 @@ export const meetingSchedules: MeetingSchedule[] = [
     attendants: [
       { name: 'Name 1', avatar: avatar_12 },
       { name: 'Name 2', avatar: avatar_1 },
-      { name: 'Name 3', avatar: avatar_9 },
-    ],
+      { name: 'Name 3', avatar: avatar_9 }
+    ]
   },
   {
     title: 'Greetings with marketing',
@@ -60,8 +61,8 @@ export const meetingSchedules: MeetingSchedule[] = [
       { name: 'Name 5', avatar: avatar_10 },
       { name: 'Name 6', avatar: avatar_7 },
       { name: 'Name 7', avatar: avatar_9 },
-      { name: 'Name 8', avatar: avatar_14 },
-    ],
+      { name: 'Name 8', avatar: avatar_14 }
+    ]
   },
   {
     title: 'Meeting with shipping',
@@ -72,7 +73,7 @@ export const meetingSchedules: MeetingSchedule[] = [
       { name: 'Name 11', avatar: avatar_5 },
       { name: 'Name 12', avatar: avatar_14 },
       { name: 'Name 13', avatar: avatar_1 },
-      { name: 'Name 14', avatar: avatar_10 },
-    ],
-  },
+      { name: 'Name 14', avatar: avatar_10 }
+    ]
+  }
 ];

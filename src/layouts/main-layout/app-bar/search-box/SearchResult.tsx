@@ -16,12 +16,13 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Stack,
+  Stack
 } from '@mui/material';
 import SearchTextField from './SearchTextField';
 import SimpleBar from 'simplebar-react';
 import searchResult from 'data/search-result';
 import { getFileExtensionFromUrl, getFileNameFromUrl } from 'helpers/utils';
+import Image from 'components/base/Image';
 
 const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
   const { breadcrumbs, contacts, files, tags } = searchResult;
@@ -54,18 +55,18 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
               pb: 2,
               listStyleType: 'disc',
               listStylePosition: 'inside',
-              color: 'grey.300',
+              color: 'grey.300'
             }}
           >
-            {breadcrumbs.map((breadcrumb) => (
+            {breadcrumbs.map(breadcrumb => (
               <ListItem
                 key={breadcrumb[0].label}
                 sx={{
                   px: 3,
                   display: 'list-item',
                   '&:hover': {
-                    backgroundColor: 'action.selected',
-                  },
+                    backgroundColor: 'action.selected'
+                  }
                 }}
               >
                 <Breadcrumbs
@@ -79,11 +80,11 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
                     display: 'inline-block',
                     fontWeight: 'medium',
                     '@supports (-moz-appearance:none)': {
-                      marginLeft: 0.5,
-                    },
+                      marginLeft: 0.5
+                    }
                   }}
                 >
-                  {breadcrumb.map((breadcrumbItem) => (
+                  {breadcrumb.map(breadcrumbItem => (
                     <div key={breadcrumbItem.label}>
                       <Link
                         color="inherit"
@@ -91,8 +92,8 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
                         href={breadcrumbItem.active ? '#!' : breadcrumbItem.href}
                         sx={[
                           !!breadcrumbItem.active && {
-                            color: 'text.primary',
-                          },
+                            color: 'text.primary'
+                          }
                         ]}
                       >
                         {breadcrumbItem.label}
@@ -117,19 +118,19 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
         <Divider />
         <ResultItemSection title="Files">
           <List sx={{ pt: 0, pb: 2 }}>
-            {files.map((file) => (
+            {files.map(file => (
               <ListItem
                 disablePadding
                 key={file.name}
                 sx={{
                   '& .MuiListItemSecondaryAction-root': {
-                    display: 'none',
+                    display: 'none'
                   },
                   '&:hover': {
                     '& .MuiListItemSecondaryAction-root': {
-                      display: 'block',
-                    },
-                  },
+                      display: 'block'
+                    }
+                  }
                 }}
                 secondaryAction={
                   <IconButton edge="end" aria-label="download" sx={{ mr: 1 }}>
@@ -146,7 +147,9 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
                     {file.icon && (
                       <IconifyIcon icon={file.icon} fontSize={32} color="primary.main" />
                     )}
-                    {file.image && <img src={file.image} alt={file.name} height={30} width={30} />}
+                    {file.image && (
+                      <Image src={file.image} alt={file.name} height={30} width={30} />
+                    )}
                   </ListItemIcon>
                   <ListItemText
                     sx={{
@@ -154,20 +157,20 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
                       '& .MuiListItemText-primary': {
                         // lineClamp: 1,
                         // display: 'flex',
-                      },
+                      }
                     }}
                     secondary={file.path}
                     primaryTypographyProps={{
                       variant: 'subtitle2',
                       color: 'text.secondary',
                       mb: 0.25,
-                      sx: { display: 'flex' },
+                      sx: { display: 'flex' }
                     }}
                     secondaryTypographyProps={{
                       variant: 'caption',
                       color: 'text.disabled',
                       fontWeight: 'medium',
-                      component: 'p',
+                      component: 'p'
                     }}
                   >
                     {getFileNameFromUrl(file.name).slice(0, 25)}
@@ -182,10 +185,10 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
         <ResultItemSection title="Contacts">
           <Box sx={{ px: 3, mb: 2 }}>
             <Stack gap={1} flexWrap="wrap">
-              {contacts.map((contact) => (
+              {contacts.map(contact => (
                 <Chip
                   key={contact.name}
-                  avatar={<Avatar alt={contact.name} src={contact.avatar} />}
+                  avatar={<Avatar alt={contact.name} src={contact.avatar.src} />}
                   label={contact.name}
                   variant="soft"
                   color="default"
@@ -210,7 +213,7 @@ const SearchResult = ({ handleClose }: { handleClose: () => void }) => {
         <ResultItemSection title="Popular tags">
           <Box sx={{ px: 3, mb: 2 }}>
             <Stack gap={1} flexWrap="wrap">
-              {tags.map((tag) => (
+              {tags.map(tag => (
                 <Chip
                   key={tag}
                   label={tag}
@@ -250,7 +253,7 @@ const SearchField = ({ handleClose }: { handleClose: () => void }) => {
       fullWidth
       sx={{ '& .MuiInputBase-root': { borderRadius: 0 } }}
       inputProps={{
-        ref: initialFocusRef,
+        ref: initialFocusRef
       }}
       InputProps={{
         endAdornment: (
@@ -259,7 +262,7 @@ const SearchField = ({ handleClose }: { handleClose: () => void }) => {
               <IconifyIcon icon="material-symbols:close-rounded" color="grey.500" />
             </IconButton>
           </InputAdornment>
-        ),
+        )
       }}
     />
   );
@@ -268,7 +271,7 @@ const SearchField = ({ handleClose }: { handleClose: () => void }) => {
 const ResultItemSection = ({
   title,
   children,
-  bottomDivider = true,
+  bottomDivider = true
 }: PropsWithChildren<{ title: string; bottomDivider?: boolean }>) => {
   return (
     <Box>

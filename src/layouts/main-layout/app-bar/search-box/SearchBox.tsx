@@ -1,5 +1,3 @@
-'use client';
-
 import React, { ReactElement } from 'react';
 import SearchTextField from './SearchTextField';
 import { useBreakpoints } from 'providers/BreakpointsProvider';

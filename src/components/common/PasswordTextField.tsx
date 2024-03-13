@@ -1,5 +1,3 @@
-'use client';
-
 import { SyntheticEvent, forwardRef, useState } from 'react';
 import { TextField, InputAdornment, IconButton, TextFieldProps } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';

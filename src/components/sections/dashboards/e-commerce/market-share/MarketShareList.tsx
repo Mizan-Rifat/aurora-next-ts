@@ -3,6 +3,7 @@ import { ReactElement } from 'react';
 import { Share } from 'data/e-commerce/marketShare';
 import StyledChip from 'components/styled/StyledChip';
 import IconifyIcon from 'components/base/IconifyIcon';
+import Image from 'components/base/Image';
 
 interface MarketShareListProps {
   shares: Share[];
@@ -15,7 +16,7 @@ const growthBadge = (val: number): { color: ChipOwnProps['color']; icon: ReactEl
       color: 'success',
       icon: (
         <IconifyIcon icon="material-symbols:moving-rounded" sx={{ fontSize: '12px !important' }} />
-      ),
+      )
     };
   }
   if (val < 0) {
@@ -26,7 +27,7 @@ const growthBadge = (val: number): { color: ChipOwnProps['color']; icon: ReactEl
           icon="material-symbols:moving-rounded"
           sx={{ fontSize: '12px !important', transform: 'rotate(70deg)' }}
         />
-      ),
+      )
     };
   }
   return {
@@ -36,7 +37,7 @@ const growthBadge = (val: number): { color: ChipOwnProps['color']; icon: ReactEl
         icon="material-symbols:trending-flat-rounded"
         sx={{ fontSize: '12px !important' }}
       />
-    ),
+    )
   };
 };
 
@@ -51,7 +52,7 @@ const MarketShareList = ({ shares, bgColorMap }: MarketShareListProps) => {
           sx={{
             pt: { xs: 2, sm: index === 0 ? 0 : 2, md: 2 },
             borderTop: { xs: 1, sm: index === 0 ? 0 : 1, md: 1 },
-            borderColor: { xs: 'grey.200', sm: 'grey.200', md: 'grey.200' },
+            borderColor: { xs: 'grey.200', sm: 'grey.200', md: 'grey.200' }
           }}
         >
           <Box
@@ -59,7 +60,7 @@ const MarketShareList = ({ shares, bgColorMap }: MarketShareListProps) => {
               height: { xs: 24, sm: 44, lg: 24 },
               width: 8,
               borderRadius: 2,
-              background: bgColorMap[share.brand],
+              background: bgColorMap[share.brand]
             }}
           />
           <Stack
@@ -68,7 +69,7 @@ const MarketShareList = ({ shares, bgColorMap }: MarketShareListProps) => {
             direction={{ xs: 'row', sm: 'column', lg: 'row' }}
           >
             <Stack alignItems="center" gap={1} flex={1}>
-              <img src={share.icon} alt={share.brand} height={16} />
+              <Image src={share.icon} alt={share.brand} height={16} />
               <Typography variant="body2" sx={{ flex: 1 }}>
                 {share.brand}
               </Typography>

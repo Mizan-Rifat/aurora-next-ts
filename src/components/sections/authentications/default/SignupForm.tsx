@@ -8,6 +8,7 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { LoadingButton } from '@mui/lab';
 import paths from 'routes/paths';
+import Image from 'components/base/Image';
 
 interface SignupFormValues {
   name: string;
@@ -22,7 +23,7 @@ const schema = yup
       .string()
       .email('Please provide a valid email address.')
       .required('This field is required'),
-    password: yup.string().required('This field is required'),
+    password: yup.string().required('This field is required')
   })
   .required();
 
@@ -30,15 +31,15 @@ const SignupForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<SignupFormValues>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data: SignupFormValues) => {
     try {
       // TODO: Replace this promise with functional login action
-      await new Promise((resolve) => {
+      await new Promise(resolve => {
         setTimeout(() => {
           console.log({ data });
           resolve(data);
@@ -98,7 +99,7 @@ const SignupForm = () => {
               color="primary"
               size="large"
               sx={{ flex: 1, whiteSpace: 'nowrap' }}
-              startIcon={<img src={google_logo} alt="icon" />}
+              startIcon={<Image src={google_logo.src} height={21} width={21} alt="icon" />}
             >
               Sign in with google
             </Button>
@@ -108,7 +109,7 @@ const SignupForm = () => {
               color="primary"
               size="large"
               sx={{ flex: 1, whiteSpace: 'nowrap' }}
-              startIcon={<img src={apple_logo} alt="icon" />}
+              startIcon={<Image src={apple_logo.src} height={21} width={21} alt="icon" />}
             >
               Sign in with apple
             </Button>

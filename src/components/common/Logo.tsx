@@ -1,7 +1,6 @@
-'use client';
-
 import { Link, SvgIcon, SvgIconProps, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
+import paths from 'routes/paths';
 
 interface LogoProps extends SvgIconProps {
   id?: string;
@@ -17,7 +16,7 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
 
   return (
     <Link
-      href="/"
+      href={paths.root}
       underline="none"
       sx={{
         display: 'inline-flex',

@@ -10,7 +10,7 @@ interface OutlinedBadgeProps extends BadgeOwnProps {
 }
 
 const OutlinedBadge = styled((props: OutlinedBadgeProps) => <Badge {...props} />, {
-  shouldForwardProp: (prop) => prop !== 'outlineOptions',
+  shouldForwardProp: prop => prop !== 'outlineOptions'
 })(({ theme, outlineOptions }) => {
   const borderWidth = outlineOptions?.width || 2;
   const borderColor = outlineOptions?.color || theme.palette.background.paper;
@@ -26,9 +26,9 @@ const OutlinedBadge = styled((props: OutlinedBadgeProps) => <Badge {...props} />
         borderWidth: outlineOptions?.width || 2,
         borderColor: borderColor,
         borderStyle: 'solid',
-        borderRadius: '50%',
-      },
-    },
+        borderRadius: '50%'
+      }
+    }
   };
 });
 

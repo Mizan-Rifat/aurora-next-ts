@@ -9,29 +9,30 @@ import DataGridPaginationAction from 'components/pagination/DataGridPaginationAc
 import { GridApiCommunity } from '@mui/x-data-grid/internals';
 import { MutableRefObject } from 'react';
 import DashboardMenu from 'components/common/DashboardMenu';
+import Image from 'components/base/Image';
 
 const getStockBadge = (val: string): { color: ChipOwnProps['color']; icon: string } => {
   switch (val) {
     case 'In Stock':
       return {
         color: 'success',
-        icon: 'ic:round-check',
+        icon: 'ic:round-check'
       };
     case 'Low Stock':
       return {
         color: 'warning',
-        icon: 'material-symbols:warning-outline-rounded',
+        icon: 'material-symbols:warning-outline-rounded'
       };
     case 'Stockout':
       return {
         color: 'error',
-        icon: 'ic:round-do-not-disturb-alt',
+        icon: 'ic:round-do-not-disturb-alt'
       };
 
     default:
       return {
         color: 'primary',
-        icon: 'material-symbols:check-small-rounded',
+        icon: 'material-symbols:check-small-rounded'
       };
       break;
   }
@@ -42,11 +43,11 @@ const columns: GridColDef<Product>[] = [
     field: 'product',
     headerName: 'Product',
     width: 320,
-    valueGetter: (params) => params.row.product.name,
-    renderCell: (params) => {
+    valueGetter: params => params.row.product.name,
+    renderCell: params => {
       return (
         <Stack spacing={1.25} alignItems="center">
-          <img
+          <Image
             src={params.row.product.image}
             alt={params.row.product.name}
             height={48}
@@ -55,7 +56,7 @@ const columns: GridColDef<Product>[] = [
           <Typography variant="body1">{params.row.product.name}</Typography>
         </Stack>
       );
-    },
+    }
   },
   {
     field: 'vendor',
@@ -63,7 +64,7 @@ const columns: GridColDef<Product>[] = [
     minWidth: 160,
     flex: 0.35,
     sortable: false,
-    renderCell: (params) => (
+    renderCell: params => (
       <AvatarGroup
         max={5}
         color="primary"
@@ -73,17 +74,17 @@ const columns: GridColDef<Product>[] = [
             height: 28,
             fontSize: 12.8,
             fontWeight: 'medium',
-            backgroundColor: 'primary.main',
-          },
+            backgroundColor: 'primary.main'
+          }
         }}
       >
-        {params.row.vendors.map((v) => (
+        {params.row.vendors.map(v => (
           <Tooltip title={v.name} key={v.name}>
-            <Avatar alt={v.name} src={v.avatar} />
+            <Avatar alt={v.name} src={v.avatar.src} />
           </Tooltip>
         ))}
       </AvatarGroup>
-    ),
+    )
   },
   {
     field: 'margin',
@@ -92,10 +93,10 @@ const columns: GridColDef<Product>[] = [
     minWidth: 110,
     align: 'right',
     headerAlign: 'right',
-    valueGetter: (params) =>
+    valueGetter: params =>
       currencyFormat(params.row.margin, {
-        minimumFractionDigits: 2,
-      }),
+        minimumFractionDigits: 2
+      })
   },
   {
     field: 'sold',
@@ -104,7 +105,7 @@ const columns: GridColDef<Product>[] = [
     flex: 0.2,
     align: 'right',
     headerAlign: 'right',
-    valueGetter: (params) => numberFormat(params.row.sold),
+    valueGetter: params => numberFormat(params.row.sold)
   },
   {
     field: 'stock',
@@ -113,7 +114,7 @@ const columns: GridColDef<Product>[] = [
     flex: 0.25,
     align: 'center',
     headerAlign: 'center',
-    renderCell: (params) => (
+    renderCell: params => (
       <StyledChip
         label={params.row.stock}
         color={getStockBadge(params.row.stock)?.color}
@@ -128,7 +129,7 @@ const columns: GridColDef<Product>[] = [
         size="small"
         sx={{ width: '100%', maxWidth: 100 }}
       />
-    ),
+    )
   },
   {
     field: 'action',
@@ -137,8 +138,8 @@ const columns: GridColDef<Product>[] = [
     width: 60,
     headerClassName: 'action',
     cellClassName: 'action',
-    renderCell: () => <DashboardMenu />,
-  },
+    renderCell: () => <DashboardMenu />
+  }
 ];
 
 const ProductsTable = ({ apiRef }: { apiRef: MutableRefObject<GridApiCommunity> }) => {
@@ -152,40 +153,40 @@ const ProductsTable = ({ apiRef }: { apiRef: MutableRefObject<GridApiCommunity> 
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 6,
-            },
-          },
+              pageSize: 6
+            }
+          }
         }}
         pageSizeOptions={[6]}
         checkboxSelection
         sx={{
           '& .MuiDataGrid-columnHeader--alignRight': {
             '& .MuiDataGrid-columnHeaderTitle ': {
-              marginRight: 3,
-            },
+              marginRight: 3
+            }
           },
           '& .MuiDataGrid-cell--textRight': {
             '& .MuiDataGrid-cellContent': {
-              marginRight: 3,
-            },
+              marginRight: 3
+            }
           },
           '& .action': {
             justifyContent: 'flex-end',
-            paddingRight: 0,
+            paddingRight: 0
           },
           '& .MuiDataGrid-row': {
             '&.Mui-hovered': {
-              backgroundColor: 'inherit',
+              backgroundColor: 'inherit'
             },
             '&:hover': {
-              backgroundColor: 'inherit',
-            },
-          },
+              backgroundColor: 'inherit'
+            }
+          }
         }}
         slotProps={{
           pagination: {
-            ActionsComponent: (props) => <DataGridPaginationAction showAllHref="#!" {...props} />,
-          },
+            ActionsComponent: props => <DataGridPaginationAction showAllHref="#!" {...props} />
+          }
         }}
       />
     </Box>

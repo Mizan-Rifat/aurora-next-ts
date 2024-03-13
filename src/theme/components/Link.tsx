@@ -1,10 +1,15 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
+import NextLink, { LinkProps } from 'next/link';
 import { forwardRef } from 'react';
+
+export const LinkBehavior = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
+  <NextLink ref={ref} {...props} />
+));
 
 const Link: Components<Omit<Theme, 'components'>>['MuiLink'] = {
   defaultProps: {
-    // component: LinkBehavior,
+    component: LinkBehavior,
     underline: 'hover'
   },
   styleOverrides: {

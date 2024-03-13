@@ -1,5 +1,3 @@
-'use client';
-
 import { Box, Button, ButtonGroup, SxProps, useTheme } from '@mui/material';
 import world from 'assets/json/world.json';
 import EChartsReactCore from 'echarts-for-react/lib/core';

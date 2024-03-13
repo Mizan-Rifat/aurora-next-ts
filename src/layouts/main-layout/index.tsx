@@ -1,4 +1,5 @@
 'use client';
+
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { useSettingsContext } from 'providers/SettingsProvider';

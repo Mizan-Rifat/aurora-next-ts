@@ -1,17 +1,10 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import BreakpointsProvider from 'providers/BreakpointsProvider';
 import SettingsProvider from 'providers/SettingsProvider';
 import { theme } from 'theme/theme';
-// import { _api } from '@iconify/react';
-// import fetch from 'cross-fetch';
-// //  import fetch from 'node-fetch';
-
-// // Set Fetch API before doing anything
-// _api.setFetch(fetch);
-
-const inter = Inter({ subsets: ['latin'] });
+import { plusJakartaSans } from 'theme/typography';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,19 +16,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log('dasj');
-
   return (
-    <html lang="en">
+    <html lang="en" className={plusJakartaSans.className}>
       <body>
-        <ThemeProvider theme={theme}>
-          <BreakpointsProvider>
-            <SettingsProvider>
-              <CssBaseline />
-              {children}
-            </SettingsProvider>
-          </BreakpointsProvider>
-        </ThemeProvider>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <BreakpointsProvider>
+              <SettingsProvider>
+                <CssBaseline />
+                {children}
+              </SettingsProvider>
+            </BreakpointsProvider>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

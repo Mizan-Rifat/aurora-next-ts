@@ -1,7 +1,7 @@
 'use client';
 
 import { createTheme } from '@mui/material';
-import Button from './components/Button';
+import Button, { ButtonBase } from './components/Button';
 import Checkbox from './components/Checkbox';
 import Radio from './components/Radio';
 import Accordion, { AccordionDetails, AccordionSummary } from './components/Accordion';
@@ -51,6 +51,7 @@ export const theme = createTheme({
     MuiAccordion: Accordion,
     MuiAccordionSummary: AccordionSummary,
     MuiButton: Button,
+    MuiButtonBase: ButtonBase,
     // input fields
     MuiTextField: TextField,
     MuiFilledInput: FilledInput,

@@ -1,5 +1,3 @@
-'use client';
-
 import { ChangeEvent, Fragment, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import {
   Grid,

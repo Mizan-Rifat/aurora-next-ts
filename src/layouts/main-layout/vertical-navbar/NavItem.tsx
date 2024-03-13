@@ -1,5 +1,3 @@
-'use client';
-
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -105,8 +103,10 @@ const NavItem = ({ item, level }: NavItemProps) => {
     <>
       <ListItem key={item.pathName} disablePadding>
         <ListItemButton
-          // component={item.items ? 'div' : Link}
-          to={item.path}
+          className={item.name}
+          component={item.items ? 'div' : Link}
+          href={item.path}
+          underline="none"
           onClick={!navbarVerticalCollapsed ? toggleCollapseItem : undefined}
           onMouseEnter={navbarVerticalCollapsed ? handleMouseEnter : undefined}
           onMouseLeave={navbarVerticalCollapsed ? handleClose : undefined}
