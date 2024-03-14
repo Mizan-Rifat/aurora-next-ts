@@ -19,6 +19,7 @@ import ZoomInIcon from 'components/icons/ZoomInIcon';
 import ZoomOutIcon from 'components/icons/ZoomOutIcon';
 import ReactEchart from 'components/base/ReactEchart';
 import { ClientLocation } from 'data/e-commerce/dashboard';
+import { plusJakartaSans } from 'theme/typography';
 
 echarts.use([
   TitleComponent,
@@ -57,7 +58,7 @@ const LocationMap = ({ data, sx }: LocationMapProps) => {
           type: 'none'
         },
         textStyle: {
-          fontFamily: 'Plus Jakarta Sans',
+          fontFamily: plusJakartaSans.style.fontFamily,
           fontWeight: 400,
           fontSize: 12,
           color: theme.palette.common.white

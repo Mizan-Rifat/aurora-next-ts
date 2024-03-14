@@ -9,6 +9,7 @@ import { SxProps, useTheme } from '@mui/material';
 import { getPastDates, rgbaColor } from 'helpers/utils';
 import ReactEchart from 'components/base/ReactEchart';
 import { ComparisonChartData } from 'data/e-commerce/dashboard';
+import { plusJakartaSans } from 'theme/typography';
 
 echarts.use([TooltipComponent, GridComponent, LineChart, CanvasRenderer, LegendComponent]);
 
@@ -30,55 +31,55 @@ const GeneratedRevenueChart = forwardRef<null | EChartsReactCore, GeneratedReven
             type: 'line',
             lineStyle: {
               color: theme.palette.grey[400],
-              type: 'solid',
+              type: 'solid'
             },
-            z: 1,
+            z: 1
           },
           textStyle: {
-            fontFamily: 'Plus Jakarta Sans',
+            fontFamily: plusJakartaSans.style.fontFamily,
             fontWeight: 400,
             fontSize: 12,
-            color: theme.palette.common.white,
+            color: theme.palette.common.white
           },
           backgroundColor: theme.palette.text.primary,
           borderWidth: 0,
           extraCssText: 'box-shadow: none;',
-          valueFormatter: (value: string) => `$${Number(value) / 1000}K`,
+          valueFormatter: (value: string) => `$${Number(value) / 1000}K`
         },
         legend: {
           data: ['lastYear', 'thisYear'],
-          show: false,
+          show: false
         },
         xAxis: {
           type: 'category',
-          data: getPastDates(15).map((date) => {
+          data: getPastDates(15).map(date => {
             return dayjs(date).format('MMM DD');
           }),
           boundaryGap: false,
           show: true,
           axisLine: {
-            show: false,
+            show: false
           },
           splitLine: {
             show: true,
             interval: 0,
             lineStyle: {
-              color: theme.palette.grey[200],
-            },
+              color: theme.palette.grey[200]
+            }
           },
           axisTick: {
-            show: false,
+            show: false
           },
           axisLabel: {
             show: true,
-            fontFamily: 'Plus Jakarta Sans',
-            color: theme.palette.text.secondary,
-          },
+            fontFamily: '__Plus_Jakarta_Sans_a182b8',
+            color: theme.palette.text.secondary
+          }
         },
         yAxis: {
           show: false,
           type: 'value',
-          boundaryGap: false,
+          boundaryGap: false
         },
         series: [
           {
@@ -91,21 +92,21 @@ const GeneratedRevenueChart = forwardRef<null | EChartsReactCore, GeneratedReven
             zlevel: 1,
             lineStyle: {
               width: 3,
-              color: theme.palette.primary.main,
+              color: theme.palette.primary.main
             },
             emphasis: {
               lineStyle: {
-                color: theme.palette.primary.main,
+                color: theme.palette.primary.main
               },
               itemStyle: {
                 borderWidth: 16,
                 borderColor: rgbaColor(theme.palette.primary.main, 0.2),
-                color: theme.palette.primary.darker,
-              },
+                color: theme.palette.primary.darker
+              }
             },
             itemStyle: {
-              color: theme.palette.primary.main,
-            },
+              color: theme.palette.primary.main
+            }
           },
           {
             type: 'line',
@@ -116,30 +117,30 @@ const GeneratedRevenueChart = forwardRef<null | EChartsReactCore, GeneratedReven
             symbol: 'circle',
             lineStyle: {
               width: 3,
-              color: theme.palette.grey[300],
+              color: theme.palette.grey[300]
             },
             emphasis: {
               lineStyle: {
-                color: theme.palette.grey[300],
+                color: theme.palette.grey[300]
               },
               itemStyle: {
                 borderWidth: 16,
                 borderColor: rgbaColor(theme.palette.text.primary, 0.2),
-                color: theme.palette.text.primary,
-              },
+                color: theme.palette.text.primary
+              }
             },
             itemStyle: {
-              color: theme.palette.grey[500],
-            },
-          },
+              color: theme.palette.grey[500]
+            }
+          }
         ],
-        grid: { left: 20, right: 20, top: 0, bottom: 25 },
+        grid: { left: 20, right: 20, top: 0, bottom: 25 }
       }),
-      [],
+      []
     );
 
     return <ReactEchart ref={ref} echarts={echarts} option={getOptions()} sx={sx} />;
-  },
+  }
 );
 
 export default GeneratedRevenueChart;

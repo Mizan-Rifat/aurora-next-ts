@@ -7,6 +7,7 @@ import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
 import { Share } from 'data/e-commerce/marketShare';
 import ReactEchart from 'components/base/ReactEchart';
+import { plusJakartaSans } from 'theme/typography';
 
 echarts.use([TooltipComponent, PieChart, CanvasRenderer, GridComponent, LegendComponent]);
 
@@ -21,22 +22,22 @@ const MarketShareChart = ({ data, bgColorMap, sx }: MarketShareChartProps) => {
 
   const getOptions = useCallback(
     () => ({
-      color: Object.keys(bgColorMap).map((key) => bgColorMap[key]),
+      color: Object.keys(bgColorMap).map(key => bgColorMap[key]),
 
       tooltip: {
         trigger: 'item',
         textStyle: {
-          fontFamily: 'Plus Jakarta Sans',
+          fontFamily: plusJakartaSans.style.fontFamily,
           fontWeight: 400,
           fontSize: 12,
-          color: theme.palette.common.white,
+          color: theme.palette.common.white
         },
         backgroundColor: theme.palette.text.primary,
         borderWidth: 0,
         extraCssText: 'box-shadow: none;',
         transitionDuration: 0,
         formatter: (params: CallbackDataParams) =>
-          `<strong>${params.name}:</strong> ${params.percent}%`,
+          `<strong>${params.name}:</strong> ${params.percent}%`
       },
       legend: { show: false },
       series: [
@@ -47,22 +48,22 @@ const MarketShareChart = ({ data, bgColorMap, sx }: MarketShareChartProps) => {
           emphasis: {
             scale: false,
             itemStyle: {
-              color: 'inherit',
-            },
+              color: 'inherit'
+            }
           },
           itemStyle: {
             borderWidth: 2,
-            borderColor: theme.palette.common.white,
+            borderColor: theme.palette.common.white
           },
           label: {
-            show: false,
+            show: false
           },
-          data: data.map((share) => ({ name: share.brand, value: share.revenue })),
-        },
+          data: data.map(share => ({ name: share.brand, value: share.revenue }))
+        }
       ],
-      grid: { containLabel: true },
+      grid: { containLabel: true }
     }),
-    [],
+    []
   );
 
   return <ReactEchart echarts={echarts} option={getOptions()} sx={sx} />;

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import paths from 'routes/paths';
 
 interface LogoProps extends SvgIconProps {
-  id?: string;
+  id: string;
   showName?: boolean;
 }
 

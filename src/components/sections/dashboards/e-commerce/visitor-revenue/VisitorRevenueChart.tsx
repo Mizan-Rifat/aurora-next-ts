@@ -9,6 +9,7 @@ import { getPastDates } from 'helpers/utils';
 import { tooltipFormatterList } from 'helpers/echart-utils';
 import ReactEchart from 'components/base/ReactEchart';
 import { ComparisonChartData } from 'data/e-commerce/dashboard';
+import { plusJakartaSans } from 'theme/typography';
 
 echarts.use([TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
 
@@ -27,38 +28,38 @@ const VisitorRevenueChart = ({ data, sx }: VisitorRevenueChartProps) => {
         padding: [7, 10],
         transitionDuration: 0,
         axisPointer: {
-          type: 'none',
+          type: 'none'
         },
         textStyle: {
-          fontFamily: 'Plus Jakarta Sans',
+          fontFamily: plusJakartaSans.style.fontFamily,
           fontWeight: 400,
           fontSize: 12,
-          color: theme.palette.common.white,
+          color: theme.palette.common.white
         },
         backgroundColor: theme.palette.text.primary,
         borderWidth: 0,
         extraCssText: 'box-shadow: none;',
-        formatter: tooltipFormatterList,
+        formatter: tooltipFormatterList
       },
       xAxis: {
         type: 'category',
-        data: getPastDates(8).map((date) => dayjs(date).format('MMM DD')),
+        data: getPastDates(8).map(date => dayjs(date).format('MMM DD')),
         show: false,
         boundaryGap: false,
         axisLine: {
-          show: false,
+          show: false
         },
         axisTick: {
-          show: false,
+          show: false
         },
         axisLabel: {
-          show: false,
-        },
+          show: false
+        }
       },
       yAxis: {
         show: false,
         type: 'value',
-        boundaryGap: false,
+        boundaryGap: false
       },
       series: [
         {
@@ -70,8 +71,8 @@ const VisitorRevenueChart = ({ data, sx }: VisitorRevenueChartProps) => {
           label: { show: false },
           itemStyle: {
             borderRadius: [10, 10, 0, 0],
-            color: theme.palette.primary.main,
-          },
+            color: theme.palette.primary.main
+          }
         },
         {
           name: 'last year',
@@ -82,13 +83,13 @@ const VisitorRevenueChart = ({ data, sx }: VisitorRevenueChartProps) => {
           label: { show: false },
           itemStyle: {
             borderRadius: [10, 10, 0, 0],
-            color: theme.palette.grey[300],
-          },
-        },
+            color: theme.palette.grey[300]
+          }
+        }
       ],
-      grid: { left: 20, right: '-10%', top: 0, bottom: '5%' },
+      grid: { left: 20, right: '-10%', top: 0, bottom: '5%' }
     }),
-    [],
+    []
   );
 
   return <ReactEchart echarts={echarts} option={getOptions()} sx={sx} />;
