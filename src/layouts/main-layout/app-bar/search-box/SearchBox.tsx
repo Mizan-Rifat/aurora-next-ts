@@ -10,7 +10,7 @@ const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: ReactElement;
   },
-  ref: React.Ref<unknown>
+  ref: React.Ref<unknown>,
 ) {
   return <Fade ref={ref} {...props} />;
 });
@@ -26,8 +26,8 @@ const SearchBox = () => {
     setAnchorEl(null);
   };
 
-  const { up } = useBreakpoints();
-  const upMd = up('md');
+  const { useUp } = useBreakpoints();
+  const upMd = useUp('md');
 
   const open = Boolean(anchorEl);
 
@@ -37,7 +37,7 @@ const SearchBox = () => {
         <>
           <SearchTextField
             InputProps={{
-              onClick: handleClick
+              onClick: handleClick,
             }}
           />
           <Popover
@@ -46,7 +46,7 @@ const SearchBox = () => {
             onClose={handleClose}
             anchorOrigin={{
               vertical: 'top',
-              horizontal: 'left'
+              horizontal: 'left',
             }}
             elevation={3}
             transitionDuration={150}
@@ -58,16 +58,16 @@ const SearchBox = () => {
                   width: { xs: 300, sm: 480 },
                   overflow: 'hidden',
                   display: 'flex',
-                  flexDirection: 'column'
-                }
+                  flexDirection: 'column',
+                },
               },
               root: {
                 slotProps: {
                   backdrop: {
-                    invisible: false
-                  }
-                }
-              }
+                    invisible: false,
+                  },
+                },
+              },
             }}
           >
             <SearchResult handleClose={handleClose} />
@@ -88,8 +88,8 @@ const SearchBox = () => {
               sx: {
                 width: '100%',
                 borderRadius: 2,
-                outline: 'none'
-              }
+                outline: 'none',
+              },
             }}
           >
             <SearchResult handleClose={handleClose} />

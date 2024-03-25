@@ -6,32 +6,33 @@ import { useMediaQuery } from '@mui/material';
 
 interface BreakpointContextInterface {
   currentBreakpoint: Breakpoint;
-  up: (key: Breakpoint | number) => boolean;
-  down: (key: Breakpoint | number) => boolean;
-  only: (key: Breakpoint | number) => boolean;
-  between: (start: Breakpoint | number, end: Breakpoint | number) => boolean;
+  useUp: (key: Breakpoint | number) => boolean;
+  useDown: (key: Breakpoint | number) => boolean;
+  useOnly: (key: Breakpoint | number) => boolean;
+  useBetween: (start: Breakpoint | number, end: Breakpoint | number) => boolean;
 }
 
 export const BreakpointContext = createContext({} as BreakpointContextInterface);
 
 const BreakpointsProvider = ({ children }: PropsWithChildren) => {
   const [currentBreakpoint, setCurrentBreakpoint] = useState<Breakpoint>('xs');
-  const up = (key: Breakpoint | number) => useMediaQuery<Theme>(theme => theme.breakpoints.up(key));
+  const useUp = (key: Breakpoint | number) =>
+    useMediaQuery<Theme>((theme) => theme.breakpoints.up(key));
 
-  const down = (key: Breakpoint | number) =>
-    useMediaQuery<Theme>(theme => theme.breakpoints.down(key));
+  const useDown = (key: Breakpoint | number) =>
+    useMediaQuery<Theme>((theme) => theme.breakpoints.down(key));
 
-  const only = (key: Breakpoint | number) =>
-    useMediaQuery<Theme>(theme => theme.breakpoints.only(key as Breakpoint));
+  const useOnly = (key: Breakpoint | number) =>
+    useMediaQuery<Theme>((theme) => theme.breakpoints.only(key as Breakpoint));
 
-  const between = (start: Breakpoint | number, end: Breakpoint | number) =>
-    useMediaQuery<Theme>(theme => theme.breakpoints.between(start, end));
+  const useBetween = (start: Breakpoint | number, end: Breakpoint | number) =>
+    useMediaQuery<Theme>((theme) => theme.breakpoints.between(start, end));
 
-  const isXs = between('xs', 'sm');
-  const isSm = between('sm', 'md');
-  const isMd = between('md', 'lg');
-  const isLg = between('lg', 'xl');
-  const isXl = up('xl');
+  const isXs = useBetween('xs', 'sm');
+  const isSm = useBetween('sm', 'md');
+  const isMd = useBetween('md', 'lg');
+  const isLg = useBetween('lg', 'xl');
+  const isXl = useUp('xl');
 
   useEffect(() => {
     if (isXs) {
@@ -52,7 +53,7 @@ const BreakpointsProvider = ({ children }: PropsWithChildren) => {
   }, [isXs, isSm, isMd, isLg, isXl]);
 
   return (
-    <BreakpointContext.Provider value={{ currentBreakpoint, up, down, only, between }}>
+    <BreakpointContext.Provider value={{ currentBreakpoint, useUp, useDown, useOnly, useBetween }}>
       {children}
     </BreakpointContext.Provider>
   );

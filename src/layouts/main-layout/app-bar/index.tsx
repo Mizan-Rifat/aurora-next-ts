@@ -13,13 +13,12 @@ import SearchBox from './search-box/SearchBox';
 import Logo from 'components/common/Logo';
 
 export default function AppBar() {
-  const jjh = '';
   const {
     config: { drawerWidth, minimizedLayoutBreakpoint },
-    handleDrawerToggle
+    handleDrawerToggle,
   } = useSettingsContext();
 
-  const { up } = useBreakpoints();
+  const { useUp } = useBreakpoints();
 
   return (
     <MuiAppBar
@@ -28,8 +27,8 @@ export default function AppBar() {
         width: { [minimizedLayoutBreakpoint]: `calc(100% - ${drawerWidth}px)` },
         ml: { [minimizedLayoutBreakpoint]: `${drawerWidth}px` },
         '&.MuiPaper-root': {
-          outline: 'none'
-        }
+          outline: 'none',
+        },
       }}
     >
       <Toolbar variant="appbar" sx={{ px: { xs: 3, md: 5 } }}>
@@ -41,7 +40,7 @@ export default function AppBar() {
             pr: 2,
             mr: 1,
             borderRight: 1,
-            borderColor: grey[300]
+            borderColor: grey[300],
           }}
         >
           <IconButton
@@ -53,7 +52,7 @@ export default function AppBar() {
             <IconifyIcon icon="material-symbols:menu-rounded" sx={{ fontSize: 20 }} />
           </IconButton>
 
-          <Logo showName={up('sm')} />
+          <Logo showName={useUp('sm')} />
         </Box>
 
         <Stack alignItems="center" flex={1}>

@@ -13,12 +13,12 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 const MainLayout = ({ children }: PropsWithChildren) => {
   const {
     config: { drawerWidth, minimizedLayoutBreakpoint, navbarVerticalCollapsed },
-    toggleNavbarCollapse
+    toggleNavbarCollapse,
   } = useSettingsContext();
 
-  const { between } = useBreakpoints();
+  const { useBetween } = useBreakpoints();
 
-  const downLayoutBreakpoint = between(minimizedLayoutBreakpoint, 'lg');
+  const downLayoutBreakpoint = useBetween(minimizedLayoutBreakpoint, 'lg');
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -36,8 +36,8 @@ const MainLayout = ({ children }: PropsWithChildren) => {
 
             display: 'flex',
             flexDirection: 'column',
-            marginLeft: { md: '136px', lg: 0 }
-          }
+            marginLeft: { md: '136px', lg: 0 },
+          },
           // !navbarVerticalCollapsed && {
           //   marginLeft: { md: '136px', lg: 0 },
           // },
@@ -50,7 +50,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
 
           {downLayoutBreakpoint && (
             <Backdrop
-              sx={{ zIndex: theme => theme.zIndex.appBar + 1 }}
+              sx={{ zIndex: (theme) => theme.zIndex.appBar + 1 }}
               open={!navbarVerticalCollapsed}
               onClick={toggleNavbarCollapse}
             />

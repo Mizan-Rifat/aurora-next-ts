@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { Button, Menu, MenuItem, MenuItemProps } from '@mui/material';
 import EllipsisHorizontalIcon from 'components/icons/EllipsisHorizontalIcon';
 
@@ -27,7 +27,7 @@ const DashboardMenu = ({ menuItems = defaultItems }: DashboardMenuProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {

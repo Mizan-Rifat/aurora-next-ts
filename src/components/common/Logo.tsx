@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import paths from 'routes/paths';
 
 interface LogoProps extends SvgIconProps {
-  id: string;
   showName?: boolean;
 }
 
@@ -23,9 +22,9 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
         alignItems: 'center',
         '&:hover': {
           '& .MuiTypography-root': {
-            backgroundPosition: 'left'
-          }
-        }
+            backgroundPosition: 'left',
+          },
+        },
       }}
     >
       <SvgIcon
@@ -33,7 +32,7 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
         sx={{
           height: 40,
           width: 26,
-          ...sx
+          ...sx,
         }}
         {...rest}
       >
@@ -146,7 +145,7 @@ const Logo = ({ sx, viewBox = '0 0 26 40', showName = true, ...rest }: LogoProps
             backgroundPosition: 'right',
             WebkitBackgroundClip: 'text',
             ' -webkit-text-fill-color': 'transparent',
-            transition: 'background-position .3s cubic-bezier(0.8, 0.63, .5, 1)'
+            transition: 'background-position .3s cubic-bezier(0.8, 0.63, .5, 1)',
           }}
         >
           aurora
